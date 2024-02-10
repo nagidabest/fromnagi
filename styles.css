@@ -1,0 +1,331 @@
+@media screen and (max-width: 425px) {
+    body {
+        max-width: 425px; /* Set the maximum width */
+        margin: 0 auto; /* Center the body horizontally */
+    }
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Set width to viewport width */
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling */
+    background-image: radial-gradient(#f7dede 50%, #f2a7a7);
+    background-attachment: fixed;
+}
+section {
+    position: relative;
+    width: 100vw; /* Set width to viewport width */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 9s linear infinite forwards;
+    animation-delay: 1s;
+}
+
+
+.pedal1,
+.pedal2,
+.pedal3,
+.pedal4,
+.pedal5,
+.pedal6,
+.pedal7,
+.pedal8,
+.pedal9 {
+    position: fixed;
+    width: 11vw;
+    height: 11vw;
+    animation: change 6s linear infinite forwards;
+    animation: appear 5s ease forwards;
+    cursor: pointer; 
+  }
+
+@keyframes appear {
+    0% {
+        opacity: 0; 
+      
+    }
+    100% {
+        opacity: 1; 
+       
+    }
+}
+
+
+@keyframes rotate {     
+    0% { 
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+        
+    }
+}
+
+.pedal1 {
+    background: linear-gradient(to bottom right, darkred, deeppink);
+    border-radius: 00% 50% 00% 50% ;
+    transform: skew(23deg, 23deg) translate(-5.5vw, -5.5vw);
+}
+
+.pedal2 {
+    background: linear-gradient(to bottom left, darkred, deeppink);
+    border-radius: 50% 00% 50% 0%;
+    transform: skew(-23deg, -23deg) translate(5.5vw, -5.5vw);
+}
+
+.pedal3 {
+    background: linear-gradient(to top right,darkred, deeppink);
+    border-radius: 50% 0% 50% 00% ;
+    transform: skew(-23deg,-23deg) translate(-5.5vw, 5.5vw);
+}
+
+.pedal4 {
+    background: linear-gradient(to top left,darkred, deeppink);
+    border-radius: 0% 50% 00% 50% ;
+    transform: skew(23deg, 23deg) translate(5.5vw, 5.5vw);
+}
+
+.pedal5 {
+    background: linear-gradient(to top left,darkred, deeppink);
+    border-radius: 0% 50% 00% 50% ;
+    transform: rotateZ(45deg) skew(23deg, 23deg) translate(5.5vw, 5.5vw);
+}
+
+.pedal6 {
+    background: linear-gradient(to top left,darkred, deeppink);
+    border-radius: 0% 50% 00% 50% ;
+    transform: rotateZ(135deg) skew(23deg, 23deg) translate(5.5vw, 5.5vw);
+}
+
+.pedal7 {
+    background: linear-gradient(to top left,darkred, deeppink);
+    border-radius: 0% 50% 00% 50% ;
+    transform: rotateZ(225deg) skew(23deg, 23deg) translate(5.5vw, 5.5vw);
+}
+
+.pedal8 {
+    background: linear-gradient(to top left,darkred, deeppink);
+    border-radius: 0% 50% 00% 50% ;
+    transform: rotateZ(315deg) skew(23deg, 23deg) translate(5.5vw, 5.5vw);
+}
+
+.pedal9 {
+    border: 0.5vw solid hotpink; /* Adjust border width */
+    border-radius: 5vw; /* Use vw units for border radius */
+    width: 5vw; /* Use vw units for width */
+    height: 5vw; /* Use vw units for height */
+    background: radial-gradient(darkred, deeppink 65%);
+    filter: blur(1vw); /* Use vw units for blur filter */
+    cursor: pointer; 
+}
+  
+  .message {
+    position: absolute;
+    top: 5vh;
+    left: 5 0%;
+    transform: translateX(-50%);
+    font-family: 'Pacifico', cursive;
+    font-size: 4vw;
+    color: #c1294e;
+    animation: heartbeat 1.5s infinite;
+}
+  
+
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.message::before {
+    content: '\2764'; /* Unicode heart character */
+    position: absolute;
+    top: 1vw; /* Adjusted to 1% of the viewport width */
+    left: -4vw; /* Adjusted to -4% of the viewport width */
+    font-size: 3vw; /* Adjusted to 3% of the viewport width */
+    color: darkred; /* Light orange heart color */
+    animation: appear 5s ease forwards;
+}
+
+.message::after {
+    content: '\2764'; /* Unicode heart character */
+    position: absolute;
+    top: 1vw; /* Adjusted to 1% of the viewport width */
+    right: -4vw; /* Adjusted to -4% of the viewport width */
+    font-size: 3vw; /* Adjusted to 3% of the viewport width */
+    color: darkred; /* Light orange heart color */
+    animation: appear 5s ease forwards;
+}
+
+  .message p {
+    margin: 0; /* Remove default margin */
+  }
+
+  
+
+  .paper {
+    width: 50vw;
+    height: 50vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #f8f9fa;
+    border: 2px solid pink;
+    border-radius: 3vw;
+    box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animatePaper 0.5s forwards; /* Apply animation */
+
+
+}
+  
+@keyframes animatePaper {
+    0% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50% {
+        transform: scale(1.1) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+
+  .x {
+    position: absolute;
+    top: 2vh;
+    right: 4vh;
+    width: 2vw;
+    height: 2vw;
+    line-height: 5vw;
+    text-align: center;
+    font-size: 4vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.messageInLetter {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.55vw; /* Increase font size */
+    text-align: left; /* Center-align text */  
+    width: 40vw;
+    font-family: 'Pacifico', cursive;
+}
+
+.ending {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7vw; /* Increase font size */
+    text-align: left; /* Center-align text */  
+    width: 40vw;
+    font-family: 'Pacifico', cursive;
+}
+
+.nagi {
+    position: absolute;
+    bottom: 15%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7vw; /* Increase font size */
+    text-align: left; /* Center-align text */  
+    width: 40vw;
+    font-family: 'Pacifico', cursive;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .message {
+        font-size: 8vw;
+    }
+    .x {
+        width: 10vw;
+        height: 10vw;
+        line-height: 10vw;
+        font-size: 8vw;
+    }.paper {
+width: 90vw;
+height: 90vw;
+        height: 80vw;
+    }.messageInLetter {
+        position: absolute;
+        top: 43%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        font-size: 2.7vw;
+        text-align: left;
+        width: 60vw;
+        font-family: 'Pacifico', cursive;
+
+        
+    }.ending {
+        font-size: 3.1vw;
+        bottom: 8%;
+        left: 33.5%;
+        font-family: 'Pacifico', cursive;
+
+    }.nagi {
+        font-size: 3.1vw;
+        bottom: 3.5%;
+        left: 36%;
+        font-family: 'Pacifico', cursive;
+
+    }.message1 {
+        font-size: 50vw;
+    }
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .pedal1,
+    .pedal2,
+    .pedal3,
+    .pedal4,
+    .pedal5,
+    .pedal6,
+    .pedal7,
+    .pedal8 {
+        width: 11vw;
+        height: 11vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pedal9 {
+        width: 7vw;
+        height: 7vw;
+    }
+}
+
+.message1 {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    font-size: 4vw; /* Adjust the font size as needed */
+    color: #c1294e;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section>
+      <div onclick="toggle()" class="pedal1"></div>
+      <div onclick="toggle()" class="pedal2"></div>
+      <div onclick="toggle()" class="pedal3"></div>
+      <div onclick="toggle()" class="pedal4"></div>
+      <div onclick="toggle()" class="pedal5"></div>
+      <div onclick="toggle()" class="pedal6"></div>
+      <div onclick="toggle()" class="pedal7"></div>
+      <div onclick="toggle()" class="pedal8"></div>
+      <button class="pedal9" onclick="toggle()"></button>
+    </section>
+    <div class="message">
+      <p>Happy Valentine's Day</p>
+    </div>
+    <div class="message1">
+      <p>Please click the flower!</p>
+    </div>
+
+    <div class="paper" id="paper">
+      <div class="x" onclick="closePaper()">X</div>
+      <div class="messageInLetter" id="messageInLetter">
+        Happy Valentine's Day! Valentine's Day isn't just for romantic lovers.
+        It's a celebration of all kinds of love in your life, including the love
+        from your amazing family and friends. I want to thank you, my friends,
+        for the great times we've had together, for the moments we spent
+        chatting about various topics, sharing jokes, and having awesome
+        adventures. Whether it's hanging out, having a good laugh, or just
+        enjoying each other's company, I cherish every moment with you. From
+        late-night hangouts to travelling around outside, each memory is special
+        to me. I hope life is treating you well. Don't forget to take care of
+        yourselves and stay strong. As your friend, remember that you can always
+        count on me. I've got your back, no matter what.
+      </div>
+      <div class="ending">Truly yours,</div>
+      <div class="nagi">Nagi</div>
+    </div>
+
+    <audio src="music.mp3" autoplay loop></audio>
+
+    <script>
+      function toggle() {
+        var x = document.getElementById("paper");
+
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function closePaper() {
+        var paper = document.getElementById("paper");
+        paper.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
